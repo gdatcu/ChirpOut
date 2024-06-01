@@ -12,22 +12,29 @@ else {
 <html>
     <head>
         <title>Welcome to ChirpOut</title>
+        <!-- Javascript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+
+        <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     </head>
     <body>
 
-<!-- Single button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Action <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
+      <div class="top_bar">
+        <div class="logo">
+          <!-- If we want an image instead of text, we can use
+          <img src="assets/images/logoImg"> -->
+          <a href="index.php">ChirpOut!</a>
+        </div>
+
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">messages</a>
+          <a href="#">settings</a>
+
+        </nav>
+
+      </div>
