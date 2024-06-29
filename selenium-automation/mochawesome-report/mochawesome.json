@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2024-06-01T14:31:47.157Z",
-    "end": "2024-06-01T14:31:57.316Z",
-    "duration": 10159,
+    "start": "2024-06-04T17:54:07.564Z",
+    "end": "2024-06-04T17:56:03.500Z",
+    "duration": 115936,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "93e99284-723e-4969-82d2-2a3a667c27fc",
+      "uuid": "191fb37b-b026-464f-89aa-efaa4b589a58",
       "title": "",
       "fullFile": "C:\\xampp\\htdocs\\ChirpOut\\selenium-automation\\tests\\LoginPageTest.js",
       "file": "\\tests\\LoginPageTest.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "dc8b9517-fc13-4e6f-8a25-d4756c1bacb8",
+          "uuid": "265e2d65-3b27-43e7-976d-127fc6b06002",
           "title": "Login Page Tests",
           "fullFile": "C:\\xampp\\htdocs\\ChirpOut\\selenium-automation\\tests\\LoginPageTest.js",
           "file": "\\tests\\LoginPageTest.js",
@@ -36,7 +36,7 @@
               "title": "\"before each\" hook in \"Login Page Tests\"",
               "fullTitle": "Login Page Tests \"before each\" hook in \"Login Page Tests\"",
               "timedOut": false,
-              "duration": 2486,
+              "duration": 13528,
               "state": null,
               "speed": null,
               "pass": false,
@@ -45,8 +45,8 @@
               "context": null,
               "code": "driver = await new Builder().forBrowser('chrome').build();",
               "err": {},
-              "uuid": "a1e68b85-a0c6-430f-8357-3e3c03b79e86",
-              "parentUUID": "dc8b9517-fc13-4e6f-8a25-d4756c1bacb8",
+              "uuid": "18275c5f-c3e0-4863-a1c0-0cd8d92e2385",
+              "parentUUID": "265e2d65-3b27-43e7-976d-127fc6b06002",
               "isHook": true,
               "skipped": false
             }
@@ -56,7 +56,7 @@
               "title": "\"after each\" hook in \"Login Page Tests\"",
               "fullTitle": "Login Page Tests \"after each\" hook in \"Login Page Tests\"",
               "timedOut": false,
-              "duration": 189,
+              "duration": 13180,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "await driver.quit();",
               "err": {},
-              "uuid": "fe2a3eeb-19af-4201-b3cf-ed562bbc73ea",
-              "parentUUID": "dc8b9517-fc13-4e6f-8a25-d4756c1bacb8",
+              "uuid": "b115ce56-5d16-45a9-bc03-53afa9647d29",
+              "parentUUID": "265e2d65-3b27-43e7-976d-127fc6b06002",
               "isHook": true,
               "skipped": false
             }
@@ -75,8 +75,8 @@
             {
               "title": "should login with valid credentials",
               "fullTitle": "Login Page Tests should login with valid credentials",
-              "timedOut": false,
-              "duration": 1927,
+              "timedOut": true,
+              "duration": 30133,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -85,12 +85,12 @@
               "context": null,
               "code": "const loginPage = new LoginPage(driver);\n// Navigate to the login page\nawait loginPage.navigateTo();\n// Take a screenshot before any interactions\nawait loginPage.takeScreenshot('LoginPageTest_before_interaction_valid_login.png');\n\n// Assert that the URL and Page title are correct\nlet currentUrl = await driver.getCurrentUrl();\nlet initialTitle = await driver.getTitle();\nassert.strictEqual(currentUrl, BASE_URL, `URL should be '${BASE_URL}'`);\nassert.strictEqual(initialTitle, 'Welcome to ChirpOut', `Page title should be 'Welcome to ChirpOut'`);\n// Perform login action\nawait loginPage.login(VALID_USERNAME, VALID_PASSWORD);\n// Add assertions for successful login\nlet homePageUrl = 'http://localhost:8080/demo/index.php'; // Assuming the home page URL\nlet newUrl = await driver.getCurrentUrl();\nassert.strictEqual(newUrl, homePageUrl, 'URL should be the home page URL after login');\n// Take a screenshot after login validation\nawait loginPage.takeScreenshot('LoginPageTest_after_interaction_valid_login.png');",
               "err": {
-                "message": "AssertionError: URL should be the home page URL after login",
-                "estack": "AssertionError [ERR_ASSERTION]: URL should be the home page URL after login\n    at Context.<anonymous> (tests\\LoginPageTest.js:40:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-                "diff": "- http://localhost:8080/chirpout/index.php\n+ http://localhost:8080/demo/index.php\n"
+                "message": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\xampp\\htdocs\\ChirpOut\\selenium-automation\\tests\\LoginPageTest.js)",
+                "estack": "Error: Timeout of 30000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\xampp\\htdocs\\ChirpOut\\selenium-automation\\tests\\LoginPageTest.js)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)",
+                "diff": null
               },
-              "uuid": "2005a444-4903-4258-a940-82afdb89603b",
-              "parentUUID": "dc8b9517-fc13-4e6f-8a25-d4756c1bacb8",
+              "uuid": "84d1ed8a-1aa0-4f7d-8297-c9ebbea34e27",
+              "parentUUID": "265e2d65-3b27-43e7-976d-127fc6b06002",
               "isHook": false,
               "skipped": false
             },
@@ -98,7 +98,7 @@
               "title": "should not login with invalid credentials",
               "fullTitle": "Login Page Tests should not login with invalid credentials",
               "timedOut": false,
-              "duration": 1914,
+              "duration": 12625,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -107,22 +107,22 @@
               "context": null,
               "code": "const loginPage = new LoginPage(driver);\n// Take a screenshot before any interactions\nawait loginPage.takeScreenshot('LoginPageTest_before_interaction_invalid_login.png');\n// Navigate to the login page\nawait loginPage.navigateTo();\n// Assert that the URL and Page title are correct\nlet currentUrl = await driver.getCurrentUrl();\nlet initialTitle = await driver.getTitle();\nassert.strictEqual(currentUrl, BASE_URL, `URL should be '${BASE_URL}'`);\nassert.strictEqual(initialTitle, 'Welcome to ChirpOut', `Page title should be 'Welcome to ChirpOut'`);\n// Perform invalid login action\nawait loginPage.login('invalid@example.com', 'invalidPassword');\n// Add assertions for failed login\nlet newUrl = await driver.getCurrentUrl();\nassert.strictEqual(newUrl, currentUrl, 'URL should remain the login page URL after failed login');\nlet newTitle = await driver.getTitle();\nassert.strictEqual(newTitle, initialTitle, `Page title should remain 'Welcome to ChirpOut'`);\n// Take a screenshot after invalid login validation\nawait loginPage.takeScreenshot('LoginPageTest_after_interaction_invalid_login.png');",
               "err": {},
-              "uuid": "0670c15d-ce3d-4cbc-ab2d-8d31e98de071",
-              "parentUUID": "dc8b9517-fc13-4e6f-8a25-d4756c1bacb8",
+              "uuid": "cb44374a-8c6f-48ea-8b32-aa10ee736f17",
+              "parentUUID": "265e2d65-3b27-43e7-976d-127fc6b06002",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0670c15d-ce3d-4cbc-ab2d-8d31e98de071"
+            "cb44374a-8c6f-48ea-8b32-aa10ee736f17"
           ],
           "failures": [
-            "2005a444-4903-4258-a940-82afdb89603b"
+            "84d1ed8a-1aa0-4f7d-8297-c9ebbea34e27"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 3841,
+          "duration": 42758,
           "root": false,
           "rootEmpty": false,
           "_timeout": 30000
