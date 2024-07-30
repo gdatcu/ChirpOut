@@ -1,11 +1,4 @@
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-
-	<?php  
+<?php  
 	require 'config/config.php';
 	include("includes/classes/User.php");
 	include("includes/classes/Post.php");
@@ -20,6 +13,15 @@
 	}
 
 	?>
+
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	
 	<script>
 		function toggle() {
 			var element = document.getElementById("comment_section");
@@ -145,6 +147,9 @@
 
         }
 
+     }
+     else {
+        echo "<center><br><br>No Comments to Show!</center>";
      }
 
      ?>
